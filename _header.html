@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title><mt:Var name="my_page_vars{title}" remove_html="1" escape="html" /></title>
+    <meta name="description" content="<mt:Var name="my_page_vars{description}" remove_html="1" escape="html" />">
+<mt:IfArchiveType archive_type="Individual">
+    <mt:SetVarBlock name="og_image_url"><mt:Var name="website_url" />img/share/noimage.png</mt:SetVarBlock>
+    <mt:SetVarBlock name="og_type">article</mt:SetVarBlock>
+    <mt:SetVarBlock name="og_url"><mt:EntryPermalink /></mt:SetVarBlock>
+<mt:Else>
+    <mt:SetVarBlock name="og_image_url"><mt:Var name="website_url" />img/favicon/ogp.jpg</mt:SetVarBlock>
+    <mt:SetVarBlock name="og_type">website</mt:SetVarBlock>
+    <mt:If name="my_page_vars{canonical_url}">
+        <mt:SetVarBlock name="og_url"><mt:Var name="my_page_vars{canonical_url}" /></mt:SetVarBlock>
+    <mt:Else>
+        <mt:SetVarBlock name="og_url"><mt:CanonicalURL /></mt:SetVarBlock>
+    </mt:If>
+</mt:IfArchiveType>
+    <meta property="og:title" content="<mt:Var name="my_page_vars{title}" remove_html="1" escape="html" />">
+    <meta property="og:type" content="<mt:Var name="og_type" remove_html="1" escape="html" />">
+    <meta property="og:description" content="<mt:Var name="my_page_vars{description}" remove_html="1" escape="html" />">
+    <meta property="og:url" content="<mt:Var name="og_url" remove_html="1" />">
+    <meta property="og:image" content="<mt:Var name="og_image_url" />">
+    <meta property="og:site_name" content="<mt:Var name="website_name" remove_html="1" escape="html" />">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="<mt:Var name="my_page_vars{title}" remove_html="1" escape="html" />" />
+    <meta name="twitter:description" content="<mt:Var name="my_page_vars{description}" remove_html="1" escape="html" />" />
+    <meta name="twitter:image" content="<mt:Var name="og_image_url" />" />
+    <meta name="twitter:url" content="<mt:Var name="og_url" remove_html="1" />" />
+<mt:If name="my_page_vars{is_noindex}">
+    <meta name="robots" content="noindex, nofollow">
+</mt:If>
+    <link href="<mt:Var name="website_url" />css/style.css" rel="stylesheet">
+<mt:Var name="my_page_vars{css}" setvar="my_page_css" />
+<mt:loop name="my_page_css">
+    <mt:Unless name="__value__" eq="">
+    <link rel="stylesheet" href="<mt:Var name="__value__" />">
+    </mt:Unless>
+</mt:loop>
+    <link rel="icon" href="<mt:Var name="website_url" />img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="<mt:Var name="website_url" />img/favicon/webclip.png">
+<mt:If name="my_page_vars{canonical_url}">
+    <link rel="canonical" href="<mt:Var name="my_page_vars{canonical_url}" />">
+</mt:If>
+<mt:Var name="my_page_vars{header_area}" />
+</head>
+<body>
+
+<mt:Var name="website_url" />

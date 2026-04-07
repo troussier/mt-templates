@@ -1,0 +1,12 @@
+    <script src="<mt:Var name="website_url" />js/script.js" defer="defer"></script>
+<mt:Var name="my_page_vars{js}" setvar="my_page_js" />
+<mt:loop name="my_page_js">
+    <mt:Unless name="__value__" eq="">
+    <script src="<mt:Var name="__value__" />"></script>
+    </mt:Unless>
+</mt:loop>
+
+<mt:Var name="my_page_vars{footer_area}" />
+
+</body>
+</html>

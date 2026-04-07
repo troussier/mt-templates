@@ -1,0 +1,22 @@
+<mt:Unless name="compress" regex_replace="/^\s*\n/gm","">
+<mt:Include module="config" />
+<mt:SetVar name="page_vars" note="初期化" />
+<mt:SetVarBlock name="page_vars{title}">401 Authorization Required | <mt:Var name="website_name" /></mt:SetVarBlock>
+<mt:SetVarBlock name="page_vars{description}"><mt:Var name="website_description" /></mt:SetVarBlock>
+<mt:SetVarBlock name="page_vars{canonical_url}"><mt:CanonicalURL /></mt:SetVarBlock>
+<mt:SetVar name="page_css" note="初期化" />
+<mt:SetVarBlock name="page_css" function="push"></mt:SetVarBlock>
+<mt:SetVar name="page_vars{css}" value="$page_css" />
+<mt:SetVar name="page_js" note="初期化" />
+<mt:SetVarBlock name="page_js" function="push"></mt:SetVarBlock>
+<mt:SetVar name="page_vars{js}" value="$page_js" />
+<mt:SetVarBlock name="page_vars{header_area}"></mt:SetVarBlock>
+
+<mt:Include module="PC/ヘッダー" my_page_vars="$page_vars" />
+
+<p>401 Authorization Required.</p>
+<h1>認証されていません。</h1>
+<p><a href="<mt:Var name="website_url" escape="html" />">トップページへ</a></p>
+
+<mt:Include module="PC/フッター" my_page_vars="$page_vars" />
+</mt:Unless>

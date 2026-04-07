@@ -1,0 +1,25 @@
+<mt:PaginationHeader>
+<nav aria-label="ページナビゲーション">
+    <ul class="p-pager">
+</mt:PaginationHeader>
+<mt:IfPaginationFirst>
+        <li class="p-pager__first"><a href="<mt:PaginationFirst />" aria-label="最初のページ"><span class="p-material-symbols-outlined" aria-hidden="true">first_page</span></a></li>
+</mt:IfPaginationFirst>
+<mt:IfPaginationPrev>
+        <li class="p-pager__prev"><a href="<mt:PaginationPrev />" aria-label="前のページ"><span class="p-material-symbols-outlined" aria-hidden="true">chevron_left</span></a></li>
+</mt:IfPaginationPrev>
+<mt:IfPaginationCurrent>
+        <li class="p-pager__current"><a href="<mt:PaginationLink />" aria-label="現在のページ"><mt:PaginationLink element="number" /></a></li>
+<mt:Else>
+        <li class="p-pager__item"><a href="<mt:PaginationLink />"><mt:PaginationLink element="number" /></a></li>
+</mt:IfPaginationCurrent>
+<mt:IfPaginationNext>
+        <li class="p-pager__next"><a href="<mt:PaginationNext />" aria-label="次のページ"><span class="p-material-symbols-outlined" aria-hidden="true">chevron_right</span></a></li>
+</mt:IfPaginationNext>
+<mt:IfPaginationLast>
+        <li class="p-pager__last"><a href="<mt:PaginationLast />" aria-label="最後のページ"><span class="p-material-symbols-outlined" aria-hidden="true">last_page</span></a></li>
+</mt:IfPaginationLast>
+<mt:PaginationFooter>
+    <!-- /.p-pager --></ul>
+</nav>
+</mt:PaginationFooter>

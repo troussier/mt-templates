@@ -1,0 +1,17 @@
+<mt:If tag="EntryDataEyecatch">
+    <mt:SetVarBlock name="image_url"><mt:EntryDataEyecatchAsset><mt:AssetThumbnailURL width="768" /></mt:EntryDataEyecatchAsset></mt:SetVarBlock>
+<mt:Else>
+    <mt:SetVarBlock name="image_url"><mt:Var name="website_url" />_assets/img/share/noimage.png</mt:SetVarBlock>
+</mt:If>
+<li class="c-lists-schoollife__item<mt:If name="slider"> c-slide-standard__item</mt:If>">
+    <a href="<mt:EntryPermalink escape="html" />">
+        <div class="c-lists-schoollife__photo"><img src="<mt:Var name="image_url" />" alt="<mt:EntryTitle escape="html" /> 画像"></div>
+        <div class="c-lists-schoollife__info">
+<mt:Unless name="hide_all_cats">
+            <div class="c-lists-schoollife__cat"><mt:Include module="PC/記事カテゴリ" parent="1" /></div>
+</mt:Unless>
+            <p class="c-lists-schoollife__date"><mt:EntryDate format="%Y.%b.%e" strip="" /></p>
+            <p class="c-lists-schoollife__title"><mt:EntryTitle /></p>
+        </div>
+    </a>
+</li>
