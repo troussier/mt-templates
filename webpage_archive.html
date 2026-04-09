@@ -1,20 +1,20 @@
 <mt:Unless name="compress" regex_replace="/^\s*\n/gm","">
 <mt:Include module="config" />
-<mt:SetVar name="page_vars" note="初期化" />
+<mt:SetVar name="page_vars" note="init" />
 <mt:SetVarBlock name="page_vars{title}"><mt:PageTitle /> | <mt:Var name="website_name" /></mt:SetVarBlock>
 <mt:SetVarBlock name="page_vars{description}"><mt:Var name="website_description" /></mt:SetVarBlock>
 <mt:SetVarBlock name="page_vars{canonical_url}"><mt:CanonicalURL /></mt:SetVarBlock>
-<mt:SetVar name="page_css" note="初期化" />
+<mt:SetVar name="page_css" note="init" />
 <mt:SetVarBlock name="page_css" function="push"></mt:SetVarBlock>
 <mt:SetVar name="page_vars{css}" value="$page_css" />
-<mt:SetVar name="page_js" note="初期化" />
+<mt:SetVar name="page_js" note="init" />
 <mt:SetVarBlock name="page_js" function="push"></mt:SetVarBlock>
 <mt:SetVar name="page_vars{js}" value="$page_js" />
 
-<mt:Include module="PC/ヘッダー" my_page_vars="$page_vars" />
+<mt:Include module="_header" my_page_vars="$page_vars" />
 
 <h1 class="c-title-1__ja"><mt:PageTitle /></h1>
 <div><mt:PageBody /></div>
 
-<mt:Include module="PC/フッター" my_page_vars="$page_vars" />
+<mt:Include module="_footer" my_page_vars="$page_vars" />
 </mt:Unless>
